@@ -1,0 +1,178 @@
+@import 'src/theme/variables.scss';
+
+.accident-border-container {
+    border: 1px solid #2f2f2f;
+    border-radius: 2px;
+    padding: 4px 4px 12px 4px;
+}
+
+.accident-header {
+    padding: 8px;
+    border-radius: 2px;
+    background: $ta-black-2;
+    margin-bottom: 28px;
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: $white;
+
+        &::-moz-selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+
+        &::selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.step-form {
+    br {
+        &::-moz-selection {
+            color: $ta-black;
+            background: rgb(47, 47, 47, 0.2);
+        }
+
+        &::selection {
+            color: $ta-black;
+            background: rgb(47, 47, 47, 0.2);
+        }
+    }
+
+    .line-container {
+        position: relative;
+
+        .review-feedback-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(calc(100% + 5px));
+            width: 429px;
+        }
+    }
+
+    .group {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .country-group {
+        width: 234px;
+        margin-right: 0 !important;
+    }
+
+    .class-group {
+        width: 174px;
+    }
+
+    .exp-date-group {
+        width: 172px;
+        margin-right: 0 !important;
+    }
+
+    .restrictions-group {
+        margin-right: 0 !important;
+    }
+
+    .endorsments-group {
+        margin: 0 0 12px 0 !important;
+    }
+
+    .files-section {
+        h4 {
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 22px !important;
+
+            &::-moz-selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+
+            &::selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+
+            span {
+                &::-moz-selection {
+                    color: $ta-black-2;
+                    background: rgb(47, 47, 47, 0.2);
+                }
+
+                &::selection {
+                    color: $ta-black-2;
+                    background: rgb(47, 47, 47, 0.2);
+                }
+            }
+        }
+
+        .files-container {
+            width: 616px;
+            margin-bottom: 22px;
+
+            .files-header {
+                border-top: 0.2px solid $ta-light-grey-4;
+                border-radius: 1px;
+                margin-bottom: 9px;
+                padding-top: 5px;
+                height: 24px;
+
+                .counter-container {
+                    border-radius: 2px;
+                    background: $ta-light-grey-4;
+                    width: 24px;
+                    height: 24px;
+
+                    p {
+                        font-size: 14px;
+                        color: $bw6-2;
+
+                        -webkit-user-select: none !important;
+                        -moz-user-select: none !important;
+                        -ms-user-select: none !important;
+                        user-select: none !important;
+                    }
+                }
+
+                .document-title-container {
+                    .documents-title {
+                        height: 18px;
+                        font-size: 14px;
+                        color: $bw6-2;
+                        margin-left: 4px !important;
+
+                        -webkit-user-select: none !important;
+                        -moz-user-select: none !important;
+                        -ms-user-select: none !important;
+                        user-select: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-license-title {
+        color: $ta-black;
+        font-size: 14px;
+        height: 18px;
+        margin-bottom: 12px !important;
+
+        &::-moz-selection {
+            color: $ta-black;
+            background: rgb(66, 66, 66, 0.2);
+        }
+
+        &::selection {
+            color: $ta-black;
+            background: rgb(66, 66, 66, 0.2);
+        }
+    }
+}

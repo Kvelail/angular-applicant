@@ -1,0 +1,63 @@
+<div class="d-flex align-items-center justify-content-center nav-header">
+    <nav>
+        <ul class="d-flex">
+            <li
+                *ngFor="
+                    let menuItem of menuItems;
+                    index as i;
+                    trackBy: trackByIdentity
+                "
+                class="d-flex align-items-center tab"
+                [routerLinkActive]="
+                    selectedMode === 'REVIEW_MODE' &&
+                    isTabReviewedArray[i].isReviewed &&
+                    !isTabReviewedArray[i].hasIncorrectAnswer
+                        ? 'tab-active'
+                        : selectedMode === 'REVIEW_MODE' &&
+                          isTabReviewedArray[i].isReviewed &&
+                          isTabReviewedArray[i].hasIncorrectAnswer
+                        ? 'tab-active-review-incorrect'
+                        : selectedMode === 'FEEDBACK_MODE' &&
+                          feedbackStoreArr[i].hasIncorrectAnswer
+                        ? 'tab-active-feedback-incorrect'
+                        : 'tab-active'
+                "
+                [ngClass]="{
+                    disabled:
+                        (selectedMode === 'APPLICANT_MODE' &&
+                            !isTabCompletedArray[i === 0 ? i : i - 1]
+                                .isCompleted) ||
+                        (selectedMode === 'REVIEW_MODE' &&
+                            !isTabReviewedArray[i === 0 ? i : i - 1]
+                                .isReviewed),
+                    'completed-tab':
+                        (selectedMode === 'APPLICANT_MODE' &&
+                            isTabCompletedArray[i].isCompleted) ||
+                        (selectedMode === 'REVIEW_MODE' &&
+                            isTabReviewedArray[i].isReviewed &&
+                            !isTabReviewedArray[i].hasIncorrectAnswer),
+                    'reviewed-incorrect-answer':
+                        selectedMode === 'REVIEW_MODE' &&
+                        isTabReviewedArray[i].isReviewed &&
+                        isTabReviewedArray[i].hasIncorrectAnswer,
+                    'feedback-incorrect-answer':
+                        selectedMode === 'FEEDBACK_MODE' &&
+                        feedbackStoreArr[i].hasIncorrectAnswer
+                }"
+            >
+                <a
+                    class="d-flex align-items-center ta-font-bold"
+                    [routerLink]="[menuItem.route, applicantId]"
+                >
+                    <svg-icon
+                        class="nav-icon"
+                        src="{{ menuItem.iconSrc }}"
+                        [svgStyle]="{ 'width.px': 18, 'height.px': 18 }"
+                    ></svg-icon>
+
+                    {{ menuItem.title }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

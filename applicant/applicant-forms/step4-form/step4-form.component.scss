@@ -1,0 +1,138 @@
+@import 'src/theme/variables.scss';
+
+.accident-border-container {
+    border: 1px solid #2f2f2f;
+    border-radius: 2px;
+    padding: 4px 4px 12px 4px;
+}
+
+.accident-header {
+    padding: 8px;
+    border-radius: 2px;
+    background: $ta-black-2;
+    margin-bottom: 28px;
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: $white;
+
+        &::-moz-selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+
+        &::selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.step-form {
+    .line-container {
+        position: relative;
+
+        .review-feedback-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(calc(100% + 5px));
+            width: 429px;
+        }
+    }
+
+    .group {
+        margin-bottom: 22px;
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .date-group {
+        width: 159px;
+        margin-right: 0 !important;
+    }
+
+    .fatalities-injuries-group {
+        margin-bottom: 32px;
+
+        .fatalities-group {
+            width: 178px;
+            margin-right: 12px;
+
+            p {
+                width: 77px;
+                font-size: 14px;
+                color: $bw6-2;
+                margin-right: 12px !important;
+            }
+        }
+
+        .injuries-group {
+            width: 159px;
+
+            p {
+                width: 65px;
+                font-size: 14px;
+                color: $bw6-2;
+                margin-right: 12px !important;
+            }
+        }
+    }
+
+    .hazmat-spill-group {
+        width: 194px;
+        height: 26px;
+        margin-bottom: 32px;
+
+        .title-box {
+            p {
+                font-size: 14px;
+
+                -webkit-user-select: none !important;
+                -moz-user-select: none !important;
+                -ms-user-select: none !important;
+                user-select: none !important;
+            }
+
+            .required {
+                font-size: 11px;
+                color: $ta-red-2;
+
+                &::-moz-selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+
+                &::selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+            }
+        }
+
+        .radios-box {
+            width: 86px;
+
+            .ta-input-radiobutons {
+                width: 100%;
+
+                .radio-button {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    .truck-type-group {
+        width: 231px;
+        margin-bottom: 0 !important;
+    }
+
+    .description-group {
+        margin: 0 0 12px 0 !important;
+    }
+}

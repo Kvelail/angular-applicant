@@ -1,0 +1,91 @@
+@import 'src/theme/variables.scss';
+
+.step-form {
+    .group {
+        margin-bottom: 22px;
+        margin-right: 12px;
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .date-group {
+        width: 159px;
+        margin-bottom: 32px;
+    }
+
+    .location-group {
+        width: 445px;
+        margin-bottom: 32px;
+    }
+
+    .description-group {
+        width: 616px;
+        margin-bottom: 22px !important;
+    }
+
+    .hazmat-spill-group {
+        width: 187px;
+        height: 26px;
+        margin-bottom: 22px !important;
+        margin-right: 91px !important;
+
+        .title-box {
+            p {
+                font-size: 14px;
+                color: $bw6-2;
+
+                -webkit-user-select: none !important;
+                -moz-user-select: none !important;
+                -ms-user-select: none !important;
+                user-select: none !important;
+
+                .required-star {
+                    color: $progress-danger;
+                }
+            }
+
+            .required {
+                font-size: 11px;
+                color: $ta-red-2;
+
+                &::-moz-selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+
+                &::selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+            }
+        }
+
+        .radios-box {
+            width: 86px;
+
+            .ta-input-radiobutons {
+                width: 100%;
+
+                .radio-button {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    .fatalities-injuries-group {
+        margin-bottom: 22px;
+
+        .injuries-group {
+            width: 159px;
+            margin-right: 12px;
+        }
+
+        .fatalities-group {
+            width: 178px;
+        }
+    }
+}

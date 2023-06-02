@@ -1,0 +1,187 @@
+@import 'src/theme/variables.scss';
+
+.nav-header {
+    padding: 18px 0;
+    margin: 0 auto;
+
+    nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 0;
+
+            .tab {
+                margin-right: 21px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    padding: 8px;
+                    border-radius: 3px;
+                    text-decoration: none;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $ta-light-grey-2;
+                    transition: background 0.3s ease-in-out,
+                        color 0.3s ease-in-out;
+
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    -ms-user-select: none !important;
+                    user-select: none !important;
+
+                    .nav-icon {
+                        margin-right: 5px;
+                        position: relative;
+                        bottom: 2px;
+
+                        svg {
+                            path {
+                                fill: $ta-light-grey-6;
+                            }
+                        }
+                    }
+                }
+
+                /*   &.disabled {
+                    pointer-events: none !important;
+                } */
+
+                &.tab-active {
+                    a {
+                        color: $white !important;
+                        background: $ta-blue-5 !important;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $white !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.tab-active-review-incorrect {
+                    a {
+                        color: $white !important;
+                        background: $ta-red !important;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $white !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.tab-active-feedback-incorrect {
+                    a {
+                        color: $ta-red-3 !important;
+                        background: $ta-light-grey-4 !important;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $ta-red-2 !important;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            color: $ta-red-3 !important;
+                            background: $ta-light-grey-4 !important;
+
+                            .nav-icon {
+                                svg {
+                                    path {
+                                        fill: $ta-red-2 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.completed-tab {
+                    a {
+                        color: $ta-blue-5;
+                        background: transparent;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $ta-blue-5;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            color: $ta-blue-5;
+                            background: $ta-blue-6;
+
+                            .nav-icon {
+                                svg {
+                                    path {
+                                        fill: $ta-blue-5;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.reviewed-incorrect-answer {
+                    a {
+                        color: $ta-red;
+                        background: transparent;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $ta-red;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background: $ta-red-7;
+                        }
+                    }
+                }
+
+                &.feedback-incorrect-answer {
+                    a {
+                        color: $ta-red;
+                        background: transparent;
+
+                        .nav-icon {
+                            svg {
+                                path {
+                                    fill: $ta-red-2;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            color: $ta-red-2;
+                            background: $ta-light-grey-4;
+
+                            .nav-icon {
+                                svg {
+                                    path {
+                                        fill: $ta-red-2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

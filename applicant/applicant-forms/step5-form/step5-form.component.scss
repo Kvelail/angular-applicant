@@ -1,0 +1,65 @@
+@import 'src/theme/variables.scss';
+
+.violation-border-container {
+    border: 1px solid #2f2f2f;
+    border-radius: 2px;
+    padding: 4px 4px 12px 4px;
+}
+
+.violation-header {
+    padding: 8px;
+    border-radius: 2px;
+    background: $ta-black-2;
+    margin-bottom: 28px;
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: $white;
+
+        &::-moz-selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+
+        &::selection {
+            color: $white;
+            background: rgb(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.step-form {
+    .line-container {
+        position: relative;
+
+        .review-feedback-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(calc(100% + 5px));
+            width: 429px;
+        }
+    }
+
+    .group {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .date-group {
+        width: 150px;
+    }
+
+    .truck-type-group {
+        width: 200px;
+    }
+
+    .description-group {
+        margin: 0 0 12px 0 !important;
+    }
+}

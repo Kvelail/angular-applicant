@@ -1,0 +1,22 @@
+<button
+    type="button"
+    class="d-flex justify-content-center align-items-center add-btn"
+    [ngClass]="{
+        disabled: disabledValue,
+        cancel: cancelBtn,
+        save: saveBtn
+    }"
+    (click)="onGetClickValue()"
+>
+    <p class="m-0 ta-font-bold">
+        {{
+            cancelBtn
+                ? 'Cancel'
+                : saveBtn && reviewBtn
+                ? 'Add Annotation'
+                : saveBtn
+                ? 'Save'
+                : btnText
+        }}
+    </p>
+</button>

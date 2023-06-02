@@ -1,0 +1,713 @@
+@import 'src/theme/variables.scss';
+
+.step-container {
+    padding-top: 22px;
+
+    br {
+        &::-moz-selection {
+            color: $ta-black;
+            background: rgb(47, 47, 47, 0.2);
+        }
+
+        &::selection {
+            color: $ta-black;
+            background: rgb(47, 47, 47, 0.2);
+        }
+    }
+
+    .step-title {
+        color: $ta-blue-5;
+        font-size: 32px;
+        line-height: 40px;
+
+        &::-moz-selection {
+            color: $ta-blue-5;
+            background: rgb(48, 116, 211, 0.2);
+        }
+
+        &::selection {
+            color: $ta-blue-5;
+            background: rgb(48, 116, 211, 0.2);
+        }
+    }
+
+    .top-section,
+    .bottom-section {
+        &.top-section {
+            margin: 22px auto 0 auto;
+        }
+
+        &.bottom-section {
+            margin: 0 auto;
+        }
+
+        p {
+            color: $ta-black-2;
+            font-size: 14px;
+            line-height: 18px;
+
+            &::-moz-selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+
+            &::selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+
+            &:nth-child(2) {
+                margin-top: 12px !important;
+            }
+        }
+    }
+
+    .mid-section {
+        margin: 22px auto 12px auto;
+    }
+
+    .form-section {
+        margin-top: 36px;
+
+        .line-container {
+            position: relative;
+
+            .review-feedback-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translateX(calc(100% + 5px));
+                width: 429px;
+            }
+        }
+
+        .form-input-container {
+            margin-bottom: 32px;
+            width: 616px;
+
+            &:nth-child(3) {
+                margin-bottom: 22px;
+            }
+
+            &:nth-child(4) {
+                margin-bottom: 36px;
+            }
+
+            .group {
+                margin-bottom: 0;
+                margin-right: 12px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            .first-name-group,
+            .last-name-group {
+                width: 302px;
+            }
+
+            .date-group {
+                width: 170px;
+            }
+
+            .ssn-group,
+            .phone-group {
+                width: 211px;
+            }
+
+            .address-group {
+                width: 440px;
+            }
+
+            .address-unit-group {
+                width: 164px;
+            }
+
+            .bank-group,
+            .account-number-group,
+            .routing-number-group {
+                width: 197.33px;
+            }
+        }
+
+        .previous-addresses {
+            .dets-container {
+                width: 616px;
+
+                .title-container {
+                    .address-title-container {
+                        width: 174px;
+                        margin-left: 36px;
+                        margin-bottom: 6px;
+                        margin-right: 288px;
+
+                        p {
+                            text-transform: uppercase;
+                            height: 15px;
+                            font-size: 12px;
+                            color: $bw5;
+
+                            &::-moz-selection {
+                                color: $bw5;
+                                background: rgb(145, 145, 145, 0.2);
+                            }
+
+                            &::selection {
+                                color: $bw5;
+                                background: rgb(145, 145, 145, 0.2);
+                            }
+
+                            span {
+                                color: $progress-danger;
+
+                                &::-moz-selection {
+                                    color: $bw5;
+                                    background: rgb(145, 145, 145, 0.2);
+                                }
+
+                                &::selection {
+                                    color: $bw5;
+                                    background: rgb(145, 145, 145, 0.2);
+                                }
+                            }
+                        }
+                    }
+
+                    .address-unit-title-container {
+                        width: 43px;
+
+                        p {
+                            text-transform: uppercase;
+                            height: 15px;
+                            font-size: 12px;
+                            color: $bw5;
+
+                            &::-moz-selection {
+                                color: $bw5;
+                                background: rgb(145, 145, 145, 0.2);
+                            }
+
+                            &::selection {
+                                color: $bw5;
+                                background: rgb(145, 145, 145, 0.2);
+                            }
+                        }
+                    }
+                }
+
+                .right-container {
+                    width: 616px;
+                    height: 26px;
+                    border-radius: 2px;
+
+                    .info-btn-container {
+                        &:hover
+                            .info-container
+                            .address-container
+                            .address-icon {
+                            svg {
+                                path {
+                                    fill: $ta-light-blue;
+                                }
+                            }
+                        }
+
+                        &:hover .info-container .address-container,
+                        &:hover .info-container .address-unit-container {
+                            p {
+                                color: $ta-light-grey-3;
+                            }
+                        }
+
+                        &:hover .info-container + .btn-container {
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                        }
+
+                        &:hover .info-container + .btn-container.active {
+                            .edit-icon,
+                            .delete-icon {
+                                display: none;
+                            }
+
+                            .review-icon-box {
+                                .review-icon {
+                                    visibility: visible !important;
+                                    opacity: 1 !important;
+                                }
+                            }
+                        }
+
+                        .info-container {
+                            .address-container {
+                                width: 480px;
+                                margin-right: 12px;
+
+                                .address-icon {
+                                    svg {
+                                        path {
+                                            transition: fill 0.2s ease-in-out;
+                                            fill: $ta-blue-3;
+                                        }
+                                    }
+                                }
+
+                                .pipe {
+                                    width: 1px;
+                                    height: 14px;
+                                    margin: 2px 6px;
+                                    background-color: $ta-gray-02;
+                                }
+
+                                p {
+                                    text-transform: uppercase;
+                                    line-height: 18px;
+                                    font-size: 14px;
+                                    color: $bw6-2;
+                                    transition: color 0.2s ease-in-out;
+
+                                    &::-moz-selection {
+                                        color: $bw6-2;
+                                        background: rgb(108, 108, 108, 0.2);
+                                    }
+
+                                    &::selection {
+                                        color: $bw6-2;
+                                        background: rgb(108, 108, 108, 0.2);
+                                    }
+                                }
+                            }
+
+                            .address-unit-container {
+                                width: 42px;
+                                margin-right: 6px;
+
+                                p {
+                                    text-transform: uppercase;
+                                    font-size: 14px;
+                                    color: $bw6-2;
+                                    transition: color 0.2s ease-in-out;
+
+                                    &::-moz-selection {
+                                        color: $bw6-2;
+                                        background: rgb(108, 108, 108, 0.2);
+                                    }
+
+                                    &::selection {
+                                        color: $bw6-2;
+                                        background: rgb(108, 108, 108, 0.2);
+                                    }
+                                }
+                            }
+                        }
+
+                        .review-icon-box {
+                            margin-left: 44px;
+                        }
+
+                        .btn-container {
+                            width: 64px;
+                            visibility: hidden !important;
+                            opacity: 0;
+                            transition: opacity 0.2s ease-in-out;
+
+                            &.active {
+                                visibility: visible !important;
+                                opacity: 1 !important;
+
+                                .edit-icon,
+                                .delete-icon,
+                                .review-icon {
+                                    visibility: hidden !important;
+                                    opacity: 0 !important;
+
+                                    -webkit-user-select: none !important;
+                                    -moz-user-select: none !important;
+                                    -ms-user-select: none !important;
+                                    user-select: none !important;
+
+                                    &.edit-icon,
+                                    &.delete-icon {
+                                        display: none !important;
+                                    }
+
+                                    &.review-icon.active {
+                                        visibility: visible !important;
+                                        opacity: 1 !important;
+                                    }
+                                }
+                            }
+
+                            .edit-icon,
+                            .delete-icon,
+                            .review-icon {
+                                cursor: pointer;
+
+                                &:hover {
+                                    svg {
+                                        path {
+                                            transition: fill 0.2s ease-in-out;
+                                            fill: $bw6-2;
+                                        }
+                                    }
+                                }
+
+                                svg {
+                                    path {
+                                        fill: $bw4;
+                                    }
+                                }
+
+                                &.edit-icon {
+                                    margin-right: 4px;
+                                }
+
+                                &.review-icon {
+                                    svg {
+                                        path {
+                                            transition: fill 0.3s ease-in-out;
+                                            fill: $ta-red-2 !important;
+                                        }
+
+                                        rect {
+                                            transition: fill 0.3s ease-in-out;
+                                            fill: $bw2 !important;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        svg {
+                                            path {
+                                                fill: $white !important;
+                                            }
+
+                                            rect {
+                                                fill: $ta-red-2 !important;
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        svg {
+                                            path {
+                                                fill: $white !important;
+                                            }
+
+                                            rect {
+                                                fill: $ta-red-3 !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .input-container {
+                        .address-container {
+                            margin-right: 12px;
+                        }
+
+                        .address-unit-container {
+                            width: 124px;
+                            margin-right: 12px;
+                        }
+
+                        .confirm-cancel-btn-container {
+                            width: 56px;
+                            height: 26px;
+
+                            .confirm-icon,
+                            .cancel-icon {
+                                cursor: pointer;
+
+                                svg {
+                                    rect {
+                                        transition: fill 0.2s ease-in-out;
+                                        fill: $ta-light-grey-4;
+                                    }
+
+                                    path {
+                                        transition: fill 0.2s ease-in-out;
+                                        fill: $bw4;
+                                    }
+                                }
+
+                                &:hover {
+                                    svg {
+                                        rect {
+                                            fill: $bw6-2;
+                                        }
+
+                                        path {
+                                            fill: $white;
+                                        }
+                                    }
+                                }
+
+                                &.confirm-icon {
+                                    margin-right: 8px;
+                                }
+                            }
+                        }
+
+                        .delete-btn-container {
+                            width: 26px;
+                            height: 26px;
+                            border-radius: 3px;
+                            background: $ta-light-grey-5;
+                            transition: background 0.2s ease-in-out;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: $bw2;
+                            }
+
+                            &:hover .delete-icon {
+                                svg {
+                                    path {
+                                        fill: $bw6-2;
+                                    }
+                                }
+                            }
+
+                            .delete-icon {
+                                cursor: pointer;
+
+                                svg {
+                                    path {
+                                        transition: fill 0.2s ease-in-out;
+                                        fill: $bw4;
+                                    }
+                                }
+                            }
+
+                            &.disabled {
+                                pointer-events: none;
+
+                                &:hover {
+                                    background: $ta-light-grey-5;
+
+                                    .delete-icon {
+                                        svg {
+                                            path {
+                                                fill: $bw4;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .previous-address-btn-container {
+                margin: 22px auto 32px auto;
+                width: 616px;
+
+                .previous-address-title {
+                    color: $ta-black;
+                    font-size: 14px;
+                    height: 18px;
+                    margin-bottom: 12px !important;
+
+                    &::-moz-selection {
+                        color: $ta-black;
+                        background: rgb(66, 66, 66, 0.2);
+                    }
+
+                    &::selection {
+                        color: $ta-black;
+                        background: rgb(66, 66, 66, 0.2);
+                    }
+                }
+            }
+        }
+    }
+
+    .questions-section {
+        width: 616px;
+        margin-bottom: 20px;
+
+        .question-container {
+            margin-bottom: 10px;
+            position: relative;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .review-feedback {
+                height: 26px;
+                position: absolute;
+                right: -6px;
+                top: 0;
+            }
+
+            .required {
+                font-size: 11px;
+                color: $ta-red-2;
+                visibility: hidden;
+                opacity: 0;
+                margin-left: 6px !important;
+
+                &::-moz-selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+
+                &::selection {
+                    color: $ta-red-2;
+                    background: rgb(239, 83, 80, 0.2);
+                }
+            }
+
+            .required-active {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .question-title {
+                color: $ta-black-2;
+                font-size: 14px;
+                line-height: 18px;
+
+                &::-moz-selection {
+                    color: $ta-black-2;
+                    background: rgb(47, 47, 47, 0.2);
+                }
+
+                &::selection {
+                    color: $ta-black-2;
+                    background: rgb(47, 47, 47, 0.2);
+                }
+
+                .required-star {
+                    color: $progress-danger;
+
+                    &::-moz-selection {
+                        color: $ta-black-2;
+                        background: rgb(47, 47, 47, 0.2);
+                    }
+
+                    &::selection {
+                        color: $ta-black-2;
+                        background: rgb(47, 47, 47, 0.2);
+                    }
+                }
+            }
+
+            .question-title-feedback {
+                color: $bw5;
+                font-size: 14px;
+                line-height: 18px;
+
+                &::-moz-selection {
+                    color: $bw5;
+                    background: rgb(145, 145, 145, 0.2);
+                }
+
+                &::selection {
+                    color: $bw5;
+                    background: rgb(145, 145, 145, 0.2);
+                }
+
+                .required-star {
+                    color: $bw5;
+
+                    &::-moz-selection {
+                        color: $bw5;
+                        background: rgb(145, 145, 145, 0.2);
+                    }
+
+                    &::selection {
+                        color: $bw5;
+                        background: rgb(145, 145, 145, 0.2);
+                    }
+                }
+            }
+
+            .question-radios-box {
+                width: 86px;
+
+                .ta-input-radiobutons {
+                    width: 100%;
+                }
+            }
+        }
+
+        .explain-container {
+            width: 616px;
+            margin-top: 4px;
+        }
+    }
+
+    .files-section {
+        h4 {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 12px !important;
+
+            &::-moz-selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+
+            &::selection {
+                color: $ta-black-2;
+                background: rgb(47, 47, 47, 0.2);
+            }
+        }
+
+        .files-container {
+            width: 616px;
+
+            .files-header {
+                border-top: 0.2px solid $bw-9;
+                border-radius: 1px;
+                margin-bottom: 9px;
+                padding-top: 10px;
+
+                p {
+                    font-size: 14px;
+                    color: $ta-black-2;
+                    line-height: 18px;
+                    margin-right: 6px !important;
+
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    -ms-user-select: none !important;
+                    user-select: none !important;
+                }
+
+                .counter-container {
+                    border-radius: 60px;
+                    background: $ta-black;
+                    width: 18px;
+                    height: 18px;
+
+                    p {
+                        font-size: 11px;
+                        color: $white;
+                        margin-right: 0 !important;
+
+                        -webkit-user-select: none !important;
+                        -moz-user-select: none !important;
+                        -ms-user-select: none !important;
+                        user-select: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.next-btn-container {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(0, -50%);
+    right: 42px;
+}

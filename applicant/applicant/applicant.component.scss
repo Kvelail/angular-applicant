@@ -1,0 +1,518 @@
+@import 'src/theme/variables.scss';
+
+.applicant-container {
+    min-height: 100vh;
+    position: relative;
+    background: $white;
+
+    .step-progress-bar {
+        width: 1432px;
+        margin: 0 auto;
+
+        .step {
+            width: 130px;
+
+            /* &.disabled {
+                pointer-events: none !important;
+
+                .step-text {
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    -ms-user-select: none !important;
+                    user-select: none !important;
+                }
+            } */
+
+            .bullet {
+                position: relative;
+                height: 42px;
+                width: 42px;
+                background: $ta-light-grey-5;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background 0.3s ease-in-out;
+
+                p {
+                    font-size: 28px;
+                    line-height: 34px;
+                    color: $ta-light-grey-2;
+                    display: inline-flex;
+                    visibility: visible;
+                    opacity: 1;
+                    transition: visibility 0.3s ease-in-out,
+                        opacity 0.3s ease-in-out;
+
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    -ms-user-select: none !important;
+                    user-select: none !important;
+                }
+            }
+
+            .step-text {
+                margin: 6px auto 0 auto !important;
+                color: $bw6-2;
+                font-size: 14px;
+                line-height: 14px;
+                cursor: pointer;
+                visibility: visible;
+                opacity: 1;
+                transition: color 0.3s ease-in-out, visibility 0.3s ease-in-out,
+                    opacity 0.3s ease-in-out;
+
+                &::-moz-selection {
+                    color: $bw6-2;
+                    background: rgb(108, 108, 108, 0.2);
+                }
+
+                &::selection {
+                    color: $bw6-2;
+                    background: rgb(108, 108, 108, 0.2);
+                }
+
+                &:hover {
+                    color: $ta-black;
+
+                    &::-moz-selection {
+                        color: $bw6-2;
+                        background: rgb(66, 66, 66, 0.2);
+                    }
+
+                    &::selection {
+                        color: $bw6-2;
+                        background: rgb(66, 66, 66, 0.2);
+                    }
+                }
+            }
+
+            .bullet-2 + .step-text,
+            .bullet-3 + .step-text,
+            .bullet-4 + .step-text,
+            .bullet-5 + .step-text,
+            .bullet-10 + .step-text {
+                width: 78px;
+            }
+
+            .bullet-1::after,
+            .bullet-2::after,
+            .bullet-3::after,
+            .bullet-4::after,
+            .bullet-5::after,
+            .bullet-6::after,
+            .bullet-7::after,
+            .bullet-8::after,
+            .bullet-9::after,
+            .bullet-10::after {
+                content: '';
+                position: absolute;
+                bottom: 19px;
+                right: -90px;
+                width: 67px;
+                margin: 0 12px;
+                height: 1px;
+                background: $bw-9;
+            }
+
+            .bullet-1::before,
+            .bullet-2::before,
+            .bullet-3::before,
+            .bullet-4::before,
+            .bullet-5::before,
+            .bullet-6::before,
+            .bullet-7::before,
+            .bullet-8::before,
+            .bullet-9::before,
+            .bullet-10::before,
+            .bullet-11::before {
+                content: '';
+                display: none;
+                visibility: hidden;
+                opacity: 1;
+                vertical-align: middle;
+                width: 23.67px;
+                height: 18.29px;
+                background: url(/assets/svg/applicant/check.svg);
+                background-size: cover;
+                transition: visibility 0.3s ease-in-out,
+                    opacity 0.3s ease-in-out;
+
+                -webkit-user-select: none !important;
+                -moz-user-select: none !important;
+                -ms-user-select: none !important;
+                user-select: none !important;
+            }
+
+            &.step-active,
+            &.step-active-review {
+                pointer-events: none !important;
+
+                .bullet {
+                    background: $ta-blue-5 !important;
+
+                    p {
+                        color: $white !important;
+                    }
+                }
+
+                .step-text {
+                    color: $ta-blue-5 !important;
+
+                    &::-moz-selection {
+                        color: $ta-blue-5;
+                        background: rgb(37, 91, 185, 0.2);
+                    }
+
+                    &::selection {
+                        color: $ta-blue-5;
+                        background: rgb(37, 91, 185, 0.2);
+                    }
+                }
+            }
+
+            &.step-active-review-incorrect {
+                pointer-events: none !important;
+
+                .bullet {
+                    background: $ta-red !important;
+
+                    &::before {
+                        display: none !important;
+                        visibility: hidden !important;
+                        opacity: 0 !important;
+                    }
+
+                    p {
+                        display: inline-flex !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        color: $white;
+                    }
+                }
+
+                .step-text {
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    color: $ta-red !important;
+                }
+            }
+
+            &.step-active-feedback {
+                pointer-events: none !important;
+
+                .bullet {
+                    background: $bw6-2 !important;
+
+                    &::before {
+                        display: none !important;
+                        visibility: hidden !important;
+                        opacity: 0 !important;
+                    }
+
+                    p {
+                        display: inline-flex !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+                }
+
+                .step-text {
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    color: $bw6-2 !important;
+                }
+            }
+
+            &.step-active-feedback-incorrect {
+                pointer-events: none !important;
+
+                .bullet {
+                    background: $ta-red-2 !important;
+
+                    &::before {
+                        display: none !important;
+                        visibility: hidden !important;
+                        opacity: 0 !important;
+                    }
+
+                    p {
+                        display: inline-flex !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+                }
+
+                .step-text {
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    color: $ta-red-2 !important;
+                }
+            }
+
+            &.completed-step,
+            &.completed-step-review {
+                &.step-active,
+                &.step-active-review {
+                    .bullet {
+                        background: $ta-blue-5;
+
+                        &::before {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        p {
+                            display: inline-block;
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    .step-text {
+                        visibility: visible;
+                        opacity: 1;
+                        color: $ta-blue-9;
+                    }
+                }
+
+                .bullet {
+                    background: $ta-blue-10;
+
+                    &::before {
+                        display: inline-block;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    p {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        background: $ta-blue-11;
+
+                        &::before {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        p {
+                            display: inline-flex;
+                            visibility: visible;
+                            opacity: 1;
+                            color: $ta-blue-5;
+                        }
+                    }
+
+                    &:hover + .step-text {
+                        visibility: visible;
+                        opacity: 1;
+                        color: $ta-blue-5;
+                    }
+                }
+
+                .step-text {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+
+            &.completed-step-review-incorrect {
+                .bullet {
+                    background: $ta-red-7;
+
+                    &::before {
+                        background: url(/assets/svg/applicant/invalid-review-x.svg);
+                        background-repeat: no-repeat;
+                        width: 18px;
+                        height: 18px;
+                        display: inline-block;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    p {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        background: $ta-red-9;
+
+                        &::before {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        p {
+                            display: inline-flex;
+                            visibility: visible;
+                            opacity: 1;
+                            color: $ta-red;
+                        }
+                    }
+
+                    &:hover + .step-text {
+                        visibility: visible;
+                        opacity: 1;
+                        color: $ta-red;
+                    }
+                }
+
+                .step-text {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+
+            &.completed-step-feedback {
+                .bullet {
+                    background: $bw-9;
+
+                    &::before {
+                        display: inline-block;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    p {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        background: $bw4;
+
+                        &::before {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        p {
+                            display: inline-flex;
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover + .step-text {
+                        visibility: visible;
+                        opacity: 1;
+                        color: $bw6-2;
+                    }
+                }
+
+                .step-text {
+                    visibility: visible;
+                    opacity: 1;
+                    color: $bw5;
+                }
+            }
+
+            &.completed-step-feedback-incorrect {
+                .bullet {
+                    background: $ta-red-4;
+
+                    &::before {
+                        background: url(/assets/svg/applicant/invalid-review-x.svg);
+                        background-repeat: no-repeat;
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    p {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        background: $ta-red;
+
+                        &::before {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+
+                        p {
+                            display: inline-flex;
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover + .step-text {
+                        visibility: visible;
+                        opacity: 1;
+                        color: $ta-red;
+                    }
+                }
+
+                .step-text {
+                    visibility: visible;
+                    opacity: 1;
+                    color: $ta-red-4;
+                }
+            }
+
+            &.completed-step-feedback-sent-to-review {
+                .bullet {
+                    background: $bw-9 !important;
+
+                    &::before {
+                        width: 19px;
+                        height: 20px;
+                        background: url(/assets/svg/applicant/double-check.svg);
+                        display: inline-block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+
+                    p {
+                        display: none !important;
+                        visibility: hidden !important;
+                        opacity: 0 !important;
+                    }
+
+                    &:hover {
+                        background: $bw4 !important;
+
+                        &::before {
+                            display: none !important;
+                            visibility: hidden !important;
+                            opacity: 0 !important;
+                        }
+
+                        p {
+                            display: inline-flex !important;
+                            visibility: visible !important;
+                            opacity: 1 !important;
+                        }
+                    }
+
+                    &:hover + .step-text {
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        color: $bw4 !important;
+                    }
+                }
+
+                .step-text {
+                    visibility: hidden !important;
+                    opacity: 0 !important;
+                }
+            }
+        }
+    }
+}
